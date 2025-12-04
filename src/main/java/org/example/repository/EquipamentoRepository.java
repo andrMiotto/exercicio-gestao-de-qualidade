@@ -89,4 +89,18 @@ public class EquipamentoRepository {
         }
         return false;
     }
+
+
+    public void atualizarEquipamentoStatus(Long id) throws SQLException{
+
+        String query = "UPDATE Equipamento SET status = 'OPERACIONAL' WHERE id = ?";
+
+        try(Connection connection = Conexao.conectar();
+        PreparedStatement stmt = connection.prepareStatement(query)){
+
+            stmt.setLong(1,id);
+            stmt.executeUpdate();
+
+        }
+    }
 }

@@ -36,6 +36,6 @@ public class FalhaServiceImpl implements FalhaService {
 
     @Override
     public List<Falha> buscarFalhasCriticasAbertas() throws SQLException {
-        return List.of();
+        return falhaRepository.falhasAbertas();
     }
 }
